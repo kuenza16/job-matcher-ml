@@ -81,3 +81,9 @@ async def match(
         "cv_skills": cv_skills,
         "job_skills": job_skills
     }
+
+if __name__ == "__main__":
+    import os
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
