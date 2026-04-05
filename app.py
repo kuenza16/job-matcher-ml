@@ -11,7 +11,11 @@ app = FastAPI()
 # ---------------- CORS FIX ----------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",  # Local dev
+        "https://job-matcher-frontend.onrender.com",  # Deployed frontend
+        "https://job-matcher-backend-s5cf.onrender.com"  # Deployed backend
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
